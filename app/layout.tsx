@@ -17,14 +17,13 @@ const description =
   "Full-stack engineer specializing in AI agent and LLM-orchestration systems — LangGraph, LittleHorse, MCP, and the auth, infra, and eval suites that ship them to production.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bryanfigueroa.dev"),
+  metadataBase: new URL("https://portfolio-henna-nine-zwkjh98b21.vercel.app"),
   title: {
     default: `${profile.name} — ${profile.title}`,
     template: `%s — ${profile.name}`,
   },
   description,
   keywords: [
-    "Bryan R. Figueroa",
     "Bryan R. Figueroa",
     "AI Agent Engineer",
     "LLM Orchestration",
