@@ -24,9 +24,9 @@ export const profile = {
 };
 
 export const stats: { value: string; label: string }[] = [
-  { value: "2.5+ yrs", label: "Shipping production systems" },
-  { value: "0→1", label: "Support agent for a top payment processor" },
-  { value: "2", label: "Agentic workflows live in production" },
+  { value: "7+ yrs", label: "Shipping production systems" },
+  { value: "0→1", label: "Shipped an AI support agent for a top payment processor" },
+  { value: "3", label: "Human-in-the-loop agentic workflows automating real work" },
   { value: "Full-stack", label: "Frontend → infra → eval suites" },
 ];
 
@@ -67,9 +67,9 @@ export const projects: Project[] = [
     blurb:
       "Authored core pieces of the reusable runtime that now underpins the team's durable, human-in-the-loop agentic workflows.",
     highlights: [
-      "Backs 2 accounting approval workflows in production — AP-vendor and billable-transaction flows.",
-      "Authored the AP-invoice approval gate, batch correction loop, and HITL Slack approval flow.",
-      "Hexagonal port interfaces let new channels and gates plug in without touching workflow code.",
+      "Backs 3 agentic workflows in production — two automating the accounting team's work, one a memory-driven growth workflow (embeddings + RAG).",
+      "Automates routine accounting work across the tools the team already uses, like NetSuite, with human approval in the loop.",
+      "Authored the core runtime — approval gates, batch-correction loop, HITL Slack flow, and hexagonal ports that plug in new tools without touching workflow code.",
     ],
     stack: ["Python 3.13", "LittleHorse", "pydantic-ai", "Azure", "Slack"],
     featured: true,

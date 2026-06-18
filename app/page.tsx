@@ -52,64 +52,82 @@ export default function Home() {
       <main id="top" className="flex-1">
         {/* ---------------- HERO ---------------- */}
         <section className="relative mx-auto flex min-h-[92vh] max-w-5xl flex-col justify-center px-6 pt-24 pb-16">
-          <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background-soft/60 px-3 py-1 text-xs text-muted">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-              </span>
-              Open to senior AI / full-stack engineering roles
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
+            <div>
+              <Reveal>
+                <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background-soft/60 px-3 py-1 text-xs text-muted">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+                  </span>
+                  Open to senior AI / full-stack engineering roles
+                </div>
+              </Reveal>
+
+              <Reveal delay={80}>
+                <h1 className="mt-6 max-w-4xl text-balance text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
+                  <span className="text-gradient">{profile.name}</span>
+                </h1>
+              </Reveal>
+
+              <Reveal delay={140}>
+                <p className="mt-5 font-mono text-base text-accent sm:text-lg">
+                  {profile.title}
+                </p>
+              </Reveal>
+
+              <Reveal delay={200}>
+                <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted sm:text-xl">
+                  {profile.tagline}
+                </p>
+              </Reveal>
+
+              <Reveal delay={260}>
+                <div className="mt-9 flex flex-wrap items-center gap-3">
+                  <a
+                    href="#work"
+                    className="group inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+                  >
+                    View selected work
+                    <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                  <a
+                    href={profile.resume}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg border border-border-strong bg-background-soft px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+                  >
+                    <DownloadIcon /> Résumé
+                  </a>
+                  <div className="ml-1 flex items-center gap-1">
+                    <IconLink href={profile.github} label="GitHub">
+                      <GitHubIcon />
+                    </IconLink>
+                    <IconLink href={profile.linkedin} label="LinkedIn">
+                      <LinkedInIcon />
+                    </IconLink>
+                    <IconLink href={`mailto:${profile.email}`} label="Email">
+                      <MailIcon />
+                    </IconLink>
+                  </div>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
 
-          <Reveal delay={80}>
-            <h1 className="mt-6 max-w-4xl text-balance text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
-              <span className="text-gradient">{profile.name}</span>
-            </h1>
-          </Reveal>
-
-          <Reveal delay={140}>
-            <p className="mt-5 font-mono text-base text-accent sm:text-lg">
-              {profile.title}
-            </p>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted sm:text-xl">
-              {profile.tagline}
-            </p>
-          </Reveal>
-
-          <Reveal delay={260}>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a
-                href="#work"
-                className="group inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
-              >
-                View selected work
-                <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-              <a
-                href={profile.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-border-strong bg-background-soft px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
-              >
-                <DownloadIcon /> Résumé
-              </a>
-              <div className="ml-1 flex items-center gap-1">
-                <IconLink href={profile.github} label="GitHub">
-                  <GitHubIcon />
-                </IconLink>
-                <IconLink href={profile.linkedin} label="LinkedIn">
-                  <LinkedInIcon />
-                </IconLink>
-                <IconLink href={`mailto:${profile.email}`} label="Email">
-                  <MailIcon />
-                </IconLink>
+            <Reveal delay={160} className="order-first mx-auto lg:order-none lg:mx-0">
+              <div className="group relative aspect-[4/5] w-52 overflow-hidden rounded-2xl border border-border bg-background-soft/40 shadow-xl shadow-black/20 sm:w-60 lg:w-72">
+                <Image
+                  src={profile.photo}
+                  alt={`Portrait of ${profile.name}`}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 15rem, 18rem"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/50 via-transparent to-transparent" />
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
 
           <Reveal delay={320}>
             <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-4">
@@ -251,7 +269,7 @@ export default function Home() {
         <section id="about" className="mx-auto max-w-5xl px-6 py-24 scroll-mt-20">
           <SectionHeading index="04" kicker="About" title="How I work" />
 
-          <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-stretch">
+          <div className="max-w-3xl">
             <Reveal className="flex flex-col gap-8">
               <div className="space-y-4 text-pretty text-lg leading-relaxed text-foreground/85">
                 {profile.summary.map((para) => (
@@ -305,19 +323,6 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
-              </div>
-            </Reveal>
-
-            <Reveal delay={100}>
-              <div className="group relative h-full min-h-[26rem] w-full overflow-hidden rounded-2xl border border-border bg-background-soft/40">
-                <Image
-                  src={profile.photo}
-                  alt={`Portrait of ${profile.name}`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 400px"
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/60 via-transparent to-transparent" />
               </div>
             </Reveal>
           </div>
