@@ -35,12 +35,12 @@ app/
     Reveal.tsx      # scroll-reveal animation wrapper (client)
     icons.tsx       # inline SVG icons
 public/
-  Bryan_Figueroa_Resume.docx   # downloadable résumé (see note below)
+  Bryan_R_Figueroa_Resume.docx # downloadable résumé (see note below)
 ```
 
 ## Résumé download
 
-The "Résumé" button links to `/public/Bryan_Figueroa_Resume.docx`.
+The "Résumé" button links to `/public/Bryan_R_Figueroa_Resume.docx`.
 For a more shareable format, export your résumé to **PDF**, drop it in `public/`,
 and update `profile.resume` in `app/lib/content.ts` to point at the `.pdf`.
 

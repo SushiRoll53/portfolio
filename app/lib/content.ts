@@ -11,7 +11,7 @@ export const profile = {
   githubHandle: "SushiRoll53",
   linkedin: "https://linkedin.com/in/bryan-f",
   linkedinHandle: "bryan-f",
-  resume: "/Bryan_Figueroa_Resume.docx",
+  resume: "/Bryan_R_Figueroa_Resume.docx",
   photo: "/bryan-portrait.jpg",
   // Hero one-liner
   tagline:
