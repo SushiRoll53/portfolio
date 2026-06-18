@@ -15,16 +15,19 @@ export const profile = {
   photo: "/bryan-portrait.jpg",
   // Hero one-liner
   tagline:
-    "I build production AI agents on the load-bearing parts of a codebase — auth and identity, deploy pipelines, and the port/adapter seams — with the eval suites, IaC, and human-in-the-loop design that let them ship for real.",
-  summary:
-    "Full-stack engineer specializing in AI agent and LLM-orchestration systems. I bring a systems-engineering mindset — Docker, CI/CD, Terraform, and real test and eval suites — to agent work built on LangGraph, LittleHorse, and Temporal, and I gravitate to the load-bearing parts of a codebase: auth and identity, deploy pipelines, port/adapter seams, and the spec-driven plans that come before the code. I've taken systems from zero to one — a customer-support agent for one of the largest payment processors — and led others end to end, like the full-stack RAG platform that feeds and observes our knowledge base. Throughout, I lean on human-in-the-loop patterns that respect the reviewer downstream, ergonomics for the next engineer on the repo, and explaining things clearly — which I sharpened teaching a semester-long coding bootcamp for near-beginners.",
+    "I build production AI agents — and the auth, infra, and eval suites that let them actually ship.",
+  summary: [
+    "Full-stack engineer who moved into AI agents and LLM orchestration without dropping a production-systems mindset — Docker, CI/CD, Terraform, and real eval suites around everything I ship.",
+    "I gravitate to the load-bearing parts of a codebase: auth and identity, deploy pipelines, and the specs that come before the code. I've taken systems 0→1 — a support agent for one of the largest payment processors — and led others end to end, like the RAG platform behind our knowledge base.",
+    "I design for the humans downstream — the reviewer and the next engineer on the repo — instincts I sharpened teaching a semester-long coding bootcamp for near-beginners.",
+  ],
 };
 
 export const stats: { value: string; label: string }[] = [
   { value: "2.5+ yrs", label: "Shipping production systems" },
   { value: "0→1", label: "Support agent for a top payment processor" },
-  { value: "Full-stack", label: "Frontend, backend, infra & eval suites" },
-  { value: "Instructor", label: "Taught a coding bootcamp — students from 0 to shipped web apps" },
+  { value: "2", label: "Agentic workflows live in production" },
+  { value: "Full-stack", label: "Frontend → infra → eval suites" },
 ];
 
 export type Project = {
@@ -43,9 +46,9 @@ export const projects: Project[] = [
     blurb:
       "Designed and built a 24/7 support agent from scratch so clients resolve FAQs in minutes instead of waiting hours on a human agent.",
     highlights: [
-      "FastAPI + langgraph-supervisor topology routing to three specialist experts: RAG over Azure AI Search, Zendesk ticket ops (zenpy), and a Platform expert calling a portal MCP server.",
-      "Hardened for production behind an Azure AI Content Safety / Prompt Shield pre-filter, RSA-JWT session auth, and PyMuPDF file ingestion.",
-      "Built to cut time-to-resolution for common questions from hours to minutes with round-the-clock coverage.",
+      "Built to cut time-to-resolution for common questions from hours to minutes, 24/7.",
+      "Routes to three specialist experts — RAG over Azure AI Search, Zendesk ticket ops, and a Platform MCP server.",
+      "Hardened behind an Azure Prompt Shield pre-filter and RSA-JWT session auth.",
     ],
     stack: [
       "FastAPI",
@@ -64,9 +67,9 @@ export const projects: Project[] = [
     blurb:
       "Authored core pieces of the reusable runtime that now underpins the team's durable, human-in-the-loop agentic workflows.",
     highlights: [
-      "Wrote the AP-invoice approval gate, batch correction loop, verbatim source-excerpt ingestion path, and HITL Slack approval flow with per-signal thread routing.",
-      "Designed hexagonal port interfaces (ApprovalGate, ApprovalNotification, ContinuationRouter, WorkflowRunner) so new channels and gates plug in without touching workflow code.",
-      "In production it backs 4 accounting workflows — AP-vendor and billable-transaction approval flows.",
+      "Backs 2 accounting approval workflows in production — AP-vendor and billable-transaction flows.",
+      "Authored the AP-invoice approval gate, batch correction loop, and HITL Slack approval flow.",
+      "Hexagonal port interfaces let new channels and gates plug in without touching workflow code.",
     ],
     stack: ["Python 3.13", "LittleHorse", "pydantic-ai", "Azure", "Slack"],
     featured: true,
@@ -81,7 +84,6 @@ export const projects: Project[] = [
       "Catches regressions before they ship: flags when a tweak degrades behavior so the team can iterate without quietly breaking what worked.",
     ],
     stack: ["LangSmith", "Custom evaluators", "Python"],
-    featured: true,
   },
   {
     name: "Custom Zendesk & NetSuite MCP Servers",
@@ -93,7 +95,6 @@ export const projects: Project[] = [
       "Each tool call acts as the right end user — no shared service-account blurring of who did what in Zendesk and NetSuite.",
     ],
     stack: ["Python", "FastMCP", "JWT", "Zendesk", "NetSuite"],
-    featured: true,
   },
   {
     name: "Dynamic Multi-Tenant OAuth Pattern",
@@ -142,10 +143,9 @@ export const projects: Project[] = [
     blurb:
       "Led the full stack of the platform that feeds and observes a RAG knowledge base — an Angular dashboard over a FastAPI backend for registering sources, running syncs, and watching retrieval.",
     highlights: [
-      "Led the engineers to take an earlier KB crawler I'd built (Scrapy + Selenium, OpenAI summaries on a monthly cron) and extend it into a dual-strategy crawler — a BFS crawler plus a managed Playwright browser pool for JS-rendered pages — that honors robots.txt and sitemaps, sanitizes HTML, and indexes into Azure AI Search and Blob storage.",
-      "Layered FastAPI backend (Python 3.11, async SQLAlchemy 2 on PostgreSQL, Alembic) with JWT/MSAL auth, scheduled syncs, a Zendesk article-ingestion pipeline, and query-logging analytics so the team can see what's asked and how retrieval performs.",
-      "Angular 21 dashboard (ng-zorro, MSAL/Entra, Storybook, Vitest) on a one-image-any-environment runtime-config pattern — config generated at container start, so one artifact promotes across environments.",
-      "Engineering rigor end to end: strict mypy, ruff, pre-commit, pytest-asyncio, dependency safety scanning, and CI + staging deploy on Azure Container Apps.",
+      "Led full-stack — an Angular 21 dashboard over a FastAPI + PostgreSQL backend that feeds and observes the RAG knowledge base.",
+      "Dual-strategy crawler (BFS + managed Playwright pool) that honors robots.txt and indexes into Azure AI Search.",
+      "One-image-any-environment deploy on Azure Container Apps, with strict mypy/ruff/pytest CI.",
     ],
     stack: [
       "Angular 21",
@@ -172,24 +172,14 @@ export const experience: Experience[] = [
   {
     company: "El Paso Labs",
     role: "AI Agent Engineer",
-    period: "Mar 2024 — Present",
+    period: "Oct 2023 — Present",
     points: [
-      "Built a customer-support agent from zero to one for one of the largest payment processors: FastAPI + langgraph-supervisor topology routing to three specialist experts behind an Azure Content Safety / Prompt Shield pre-filter with RSA-JWT session auth.",
-      "Authored core pieces of the internal agentic workflow runtime (Python 3.13 + LittleHorse + pydantic-ai on Azure): the AP-invoice approval gate, batch correction loop, HITL Slack approval flow, and hexagonal port interfaces that let new channels plug in without touching workflow code.",
-      "Built custom Zendesk and NetSuite MCP servers (FastMCP) with JWT-claim-based per-request identity passthrough, so each tool call acts as the right end user.",
-      "Designed a dynamic multi-tenant OAuth pattern via Auth0 Management API + Token Vault — idempotent per-provider connections for account-specific token URLs without custom token storage.",
-      "Built a LangSmith eval suite with custom evaluators for routing, completeness, scope handling, and Zendesk-action correctness.",
-    ],
-  },
-  {
-    company: "El Paso Labs",
-    role: "Software Engineer",
-    period: "Oct 2023 — Jun 2025",
-    points: [
-      "Co-led SEIDE, an Auth0-protected installer/dealer portal (Next.js 14 + Redux Toolkit + MUI / NestJS 8 + MongoDB + CASL). Authored the security spine: Auth0 edge middleware, JWKS guard, org-scoped CASL ABAC, and Mongo session transactions.",
-      "Built an embeddable chat widget dropping into merchant portals via a single <script> tag, with Next.js API routes as a security perimeter — RSA-signed JWT sessions, hashed per-partner API keys, rate limiting, and a CORS allow-list.",
-      "Led the full stack of the RAG knowledge-base admin dashboard — an Angular 21 frontend over a FastAPI + Azure AI Search backend with a dual-strategy (BFS + Playwright) crawler, query-logging analytics, and a one-image-any-environment deploy on Azure Container Apps.",
-      "Raised team engineering ergonomics: reusable GitHub Actions workflows, Terraform/Terragrunt Azure stacks, Husky pre-push hooks, PR templates, and a Claude Code Review action.",
+      "Promoted from Software Engineer to focus on AI agents, while keeping core systems and software responsibilities.",
+      "Own auth/identity and core agent-runtime work across the team's production agents.",
+      "Shipped the team's first 0→1 production support agent; authored core pieces of the reusable workflow runtime.",
+      "Built the team's MCP servers, multi-tenant OAuth pattern, and eval tooling.",
+      "Co-led SEIDE, built the chat-widget security perimeter, and led the full-stack RAG dashboard.",
+      "Raised the team baseline: reusable GitHub Actions, Terraform/Terragrunt Azure stacks, pre-push hooks, and a Claude Code Review action.",
     ],
   },
   {
@@ -214,12 +204,9 @@ export const skills: SkillGroup[] = [
       "Temporal",
       "MCP (FastMCP)",
       "pydantic-ai",
-      "Azure OpenAI",
-      "Claude",
       "RAG / Azure AI Search",
       "LangSmith",
-      "Langfuse",
-      "Supermemory",
+      "Claude",
     ],
   },
   {
@@ -227,27 +214,20 @@ export const skills: SkillGroup[] = [
     items: ["Python", "TypeScript", "JavaScript", "Java", "Dart", "SQL"],
   },
   {
-    label: "Backend",
-    items: ["FastAPI", "async SQLAlchemy 2", "Pydantic v2", "NestJS", "Node.js"],
-  },
-  {
-    label: "Frontend",
-    items: ["Next.js", "React", "Redux Toolkit", "Angular", "MUI", "ng-zorro"],
-  },
-  {
-    label: "Data & Storage",
+    label: "Backend & Data",
     items: [
+      "FastAPI",
+      "async SQLAlchemy 2",
+      "NestJS",
       "PostgreSQL",
       "MongoDB",
-      "Supabase",
-      "Firebase",
-      "Azure AI Search",
-      "Azure Blob",
+      "Playwright",
+      "Azure AI Search / Blob",
     ],
   },
   {
-    label: "Crawling & Ingestion",
-    items: ["Scrapy", "Selenium", "Playwright", "BeautifulSoup"],
+    label: "Frontend",
+    items: ["Next.js", "React", "Angular", "Redux Toolkit", "ng-zorro"],
   },
   {
     label: "Infra / DevOps",
@@ -262,7 +242,7 @@ export const skills: SkillGroup[] = [
   },
   {
     label: "Testing & Quality",
-    items: ["pytest", "Vitest", "mypy", "ruff", "Storybook", "pre-commit"],
+    items: ["pytest", "Vitest", "mypy", "ruff", "pre-commit", "Storybook"],
   },
 ];
 

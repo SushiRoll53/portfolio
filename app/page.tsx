@@ -253,9 +253,11 @@ export default function Home() {
 
           <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-stretch">
             <Reveal className="flex flex-col gap-8">
-              <p className="text-pretty text-lg leading-relaxed text-foreground/85">
-                {profile.summary}
-              </p>
+              <div className="space-y-4 text-pretty text-lg leading-relaxed text-foreground/85">
+                {profile.summary.map((para) => (
+                  <p key={para}>{para}</p>
+                ))}
+              </div>
 
               <div className="space-y-3">
                 {principles.map((p) => (
@@ -294,6 +296,13 @@ export default function Home() {
                       <PinIcon className="h-4 w-4 text-accent" />
                       {profile.location}
                     </div>
+                    <a
+                      href={`mailto:${profile.email}`}
+                      className="mt-3 flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent"
+                    >
+                      <MailIcon className="h-4 w-4 text-accent" />
+                      {profile.email}
+                    </a>
                   </div>
                 </div>
               </div>
