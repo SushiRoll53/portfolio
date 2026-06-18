@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "Bryan R. Figueroa",
-    "Bryan Figueroa",
+    "Bryan R. Figueroa",
     "AI Agent Engineer",
     "LLM Orchestration",
     "LangGraph",
