@@ -255,18 +255,11 @@ export const principles: string[] = [
 export type Education = {
   school: string;
   degree: string;
-  detail: string;
 };
 
 export const education: Education[] = [
   {
     school: "University of Texas at El Paso (UTEP)",
     degree: "B.S. Computer Science, Minor in Mathematics",
-    detail: "GPA 3.73",
-  },
-  {
-    school: "El Paso Community College (EPCC)",
-    degree: "A.A. Computer Science",
-    detail: "GPA 3.92",
   },
 ];

@@ -298,9 +298,6 @@ export default function Home() {
                         <div key={e.school}>
                           <p className="font-medium leading-snug">{e.degree}</p>
                           <p className="mt-1 text-sm text-muted">{e.school}</p>
-                          <p className="mt-1 font-mono text-xs text-accent">
-                            {e.detail}
-                          </p>
                         </div>
                       ))}
                     </div>
