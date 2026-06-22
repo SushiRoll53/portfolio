@@ -18,6 +18,7 @@ import {
   skills,
   stats,
 } from "./lib/content";
+import { asset } from "./lib/site";
 
 function SectionHeading({
   index,
@@ -92,7 +93,7 @@ export default function Home() {
                     <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                   <a
-                    href={profile.resume}
+                    href={asset(profile.resume)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-lg border border-border-strong bg-background-soft px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
@@ -117,7 +118,7 @@ export default function Home() {
             <Reveal delay={160} className="order-first mx-auto lg:order-none lg:mx-0">
               <div className="group relative aspect-[4/5] w-52 overflow-hidden rounded-2xl border border-border bg-background-soft/40 shadow-xl shadow-black/20 sm:w-60 lg:w-72">
                 <Image
-                  src={profile.photo}
+                  src={asset(profile.photo)}
                   alt={`Portrait of ${profile.name}`}
                   fill
                   priority

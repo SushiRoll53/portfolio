@@ -1,6 +1,9 @@
 import type { MetadataRoute } from "next";
+import { siteUrl } from "./lib/site";
 
-const baseUrl = "https://portfolio-henna-nine-zwkjh98b21.vercel.app";
+export const dynamic = "force-static";
+
+const baseUrl = siteUrl;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
