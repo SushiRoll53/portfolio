@@ -11,7 +11,9 @@ export const profile = {
   githubHandle: "SushiRoll53",
   linkedin: "https://linkedin.com/in/bryan-f",
   linkedinHandle: "bryan-f",
-  resume: "/Bryan_R_Figueroa_Resume.docx",
+  // Live PDF export of the Google Doc — edit the Doc and this link always serves the latest.
+  resume:
+    "https://docs.google.com/document/d/1qXcWUC1KBt5qPhA_Q61AbvHGJ8-Hh5ec/export?format=pdf",
   photo: "/bryan-portrait.jpg",
   // Hero one-liner
   tagline:

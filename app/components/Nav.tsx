@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { profile } from "../lib/content";
-import { asset } from "../lib/site";
 
 const links = [
   { href: "#work", label: "Work" },
@@ -79,7 +78,7 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href={asset(profile.resume)}
+            href={profile.resume}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 rounded-md border border-border-strong bg-background-soft px-3 py-1.5 text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
@@ -123,7 +122,7 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href={asset(profile.resume)}
+              href={profile.resume}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}

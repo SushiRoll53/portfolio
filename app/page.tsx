@@ -93,7 +93,7 @@ export default function Home() {
                     <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                   <a
-                    href={asset(profile.resume)}
+                    href={profile.resume}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-lg border border-border-strong bg-background-soft px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
